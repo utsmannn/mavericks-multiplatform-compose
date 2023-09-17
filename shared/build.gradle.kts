@@ -26,6 +26,8 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+
+                implementation(projects.core)
             }
         }
         val androidMain by getting {
@@ -49,7 +51,7 @@ kotlin {
 
 android {
     compileSdk = (libs.versions.android.compileSdk.get()).toInt()
-    namespace = "com.myapplication.common"
+    namespace = "com.utsman.mavericks.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")

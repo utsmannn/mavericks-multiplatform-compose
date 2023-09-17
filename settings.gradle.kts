@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "MavericksMultiplatform"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -37,3 +37,4 @@ dependencyResolutionManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
+include(":core")
