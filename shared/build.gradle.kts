@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrain.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -28,13 +29,18 @@ kotlin {
                 implementation(compose.components.resources)
 
                 implementation(projects.core)
+                implementation(libs.ktorClient.core)
+                implementation(libs.ktorClient.contentNegotiation)
+                implementation(libs.ktorClient.logging)
+                implementation(libs.ktorClient.serialization)
             }
         }
         val androidMain by getting {
             dependencies {
-                api(libs.android.activityCompose)
-                api(libs.android.appcompat)
-                api(libs.android.coreKtx)
+                implementation(libs.android.activityCompose)
+                implementation(libs.android.appcompat)
+                implementation(libs.android.coreKtx)
+                implementation(libs.ktorClient.okhttp)
             }
         }
         val iosX64Main by getting
@@ -45,6 +51,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation(libs.ktorClient.darwin)
+            }
         }
     }
 }

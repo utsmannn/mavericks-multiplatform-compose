@@ -9,6 +9,7 @@ android-targetSdk = "34"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-lifecycle = "2.6.1"
+ktor = "2.3.2"
 
 [libraries]
 android-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "android-appcompat" }
@@ -17,6 +18,12 @@ android-coreKtx = { module = "androidx.core:core-ktx", version.ref = "android-co
 kotlin-coroutine = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 android-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "android-lifecycle" }
 android-viewmodelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "android-lifecycle" }
+ktorClient-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktorClient-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktorClient-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktorClient-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktorClient-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktorClient-serialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 jvm = { id = "jvm", version.ref = "kotlin" }
@@ -25,3 +32,4 @@ kotlin-android = { id = "android", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrain-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
